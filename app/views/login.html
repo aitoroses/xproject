@@ -1,0 +1,36 @@
+<div id="login-view">
+	{{credentials}}
+	<div ng-switch="form">
+		<div ng-switch-when="login">
+			<!-- LOGIN -->
+			<form id="login" method="POST" action="http://www.aitormurray.com/semiems/public/login" accept-charset="UTF-8" class="show">  	<!-- username field -->
+			    <h1>Acceso al distribuidor</h1>
+			<fieldset id="inputs">
+			    <input ng-model="credentials.login.username" id="username" placeholder="Usuario" type="text" name="username">
+			    <!-- password field -->
+			    <input ng-model="credentials.login.password" id="password" placeholder="Contraseña" type="password" name="password">        </fieldset>
+			<fieldset id="actions">
+			    <!-- submit button -->
+			    <input id="submit" class="button" type="submit" value="Entrar">        </fieldset>
+			<div class="create-account" ng-click="form_change('register')">No tienes una cuenta? Registra una ahora.</div>
+
+		</form>
+		</div>
+		<div ng-switch-when="register">
+			<!-- REGISTER -->
+
+			<form id="register" class="show" method="GET" action="http://www.aitormurray.com/semiems/public/register" accept-charset="UTF-8">
+				<!-- username field -->
+			    <h1>Registra un usuario</h1>
+			<fieldset id="inputs">
+			    <input ng-model="credentials.register.username" id="username" placeholder="Usuario" type="text" name="username">            <!-- password field -->
+			    <input ng-model="credentials.register.password" id="password" placeholder="Contraseña" type="password" name="password">        </fieldset>
+			<fieldset id="actions">
+			    <!-- submit button -->
+			    <input id="submit" class="button" type="submit" value="Registrar">        </fieldset>
+			<div class="login-account" ng-click="form_change('login')">Entra con tu cuenta ahora.</div>
+
+			</form>
+		</div>
+	</div>
+</div>          
